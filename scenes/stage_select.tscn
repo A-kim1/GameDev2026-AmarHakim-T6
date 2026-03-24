@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ch2uydyx6g7kc"]
+
+[ext_resource type="Script" uid="uid://b5t816jo6ebmp" path="res://scripts/link_button.gd" id="1_o3g3k"]
+[ext_resource type="Texture2D" uid="uid://c4jrxec8olxfm" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_desert.png" id="1_tne6o"]
+
+[node name="StageSelect" type="MarginContainer" unique_id=111417074]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2039773484]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=93238342]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3573002, 0.48007613, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "SELECT LEVEL"
+
+[node name="lev1" type="LinkButton" parent="VBoxContainer" unique_id=746248270]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.4026042, 0.4026038, 0.40260386, 1)
+theme_override_font_sizes/font_size = 30
+text = "Level 1"
+script = ExtResource("1_o3g3k")
+scene_to_load = "Level 1"
+
+[node name="lev2" type="LinkButton" parent="VBoxContainer" unique_id=2053593077]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.3987929, 0.39879292, 0.398793, 1)
+theme_override_font_sizes/font_size = 30
+text = "Level 2"
+script = ExtResource("1_o3g3k")
+scene_to_load = "Level 2"
+
+[node name="mainMenu" type="LinkButton" parent="VBoxContainer" unique_id=430936260]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.33333334, 0, 1)
+theme_override_colors/font_focus_color = Color(0.69347656, 0.6842902, 0.12735948, 1)
+theme_override_colors/font_pressed_color = Color(0.7872109, 0.78466684, 0, 1)
+theme_override_colors/font_hover_color = Color(0.7959095, 0.789632, 0.09455844, 1)
+theme_override_font_sizes/font_size = 25
+text = "Return To Title Screen"
+script = ExtResource("1_o3g3k")
+scene_to_load = "main_menu"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=381433658]
+z_index = -1
+position = Vector2(160.49998, 285)
+scale = Vector2(1.1220703, 1.0048828)
+texture = ExtResource("1_tne6o")
+
+[connection signal="pressed" from="VBoxContainer/lev1" to="VBoxContainer/lev1" method="_on_lev1_pressed"]
+[connection signal="pressed" from="VBoxContainer/lev2" to="VBoxContainer/lev2" method="_on_lev2_pressed"]
+[connection signal="pressed" from="VBoxContainer/mainMenu" to="VBoxContainer/mainMenu" method="_on_main_menu_pressed"]

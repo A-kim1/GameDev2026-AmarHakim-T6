@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b1xqqvxmjmbj4"]
+
+[ext_resource type="Script" uid="uid://dm16h5all4kx3" path="res://scripts/label.gd" id="1_ywwlr"]
+
+[node name="LifeCounter" type="MarginContainer" unique_id=1626142276]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=91627112]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+script = ExtResource("1_ywwlr")

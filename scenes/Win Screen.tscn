@@ -1,7 +1,39 @@
 [gd_scene format=3 uid="uid://pwc45rdux5bv"]
 
 [ext_resource type="Texture2D" uid="uid://cebe4q7wt0p7f" path="res://assets/Keanu.png" id="1"]
+[ext_resource type="Script" uid="uid://cw08ks22f7uq1" path="res://scripts/title_screen.gd" id="2_5cu5q"]
+[ext_resource type="Script" uid="uid://ddbx1f2saj1k4" path="res://scripts/exit.gd" id="3_87fsr"]
 
 [node name="Win Screen" type="Sprite2D" unique_id=1530643739]
 position = Vector2(512.329, 294.151)
 texture = ExtResource("1")
+
+[node name="TitleScreen" type="Button" parent="." unique_id=686091356]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -974.329
+offset_top = 5.848999
+offset_right = -692.5976
+offset_bottom = 74.849
+grow_horizontal = 2
+text = "Back To Main Menu"
+script = ExtResource("2_5cu5q")
+
+[node name="Exit" type="Button" parent="." unique_id=384762973]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -918.329
+offset_top = -202.651
+offset_right = -756.329
+offset_bottom = -151.651
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit"
+script = ExtResource("3_87fsr")
+
+[connection signal="pressed" from="TitleScreen" to="TitleScreen" method="_on_pressed"]
+[connection signal="pressed" from="Exit" to="Exit" method="_on_pressed"]
